@@ -6,13 +6,28 @@
 <div id="app-holder"></div>
 <script src="main.bundle.js"></script>
 <head>
+<style>
+  html {
+    min-width: 768px;
+  }
+
+  body {
+    font-family: Georgia, serif;
+    max-width: 740px;
+    margin: 0 auto;
+  }
   
+  h1, h2, h3 {
+    font-weight: normal;
+  }
+
+</style> 
 </head>
 <body>
   <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
 <h1>intro to coding with p5.js</h1>
-<h2>example 1: shapes</h2>
-  <script type="text/p5" data-autoplay data-preview-width="300">
+<h2>example 1: shapes</h2></p>
+<script type="text/p5" data-height="400" data-preview-width="300">
 function setup() {
   createCanvas(100, 100);
 }
@@ -31,7 +46,7 @@ function draw() {
 </script>
 <h2>example 2: mouseX and mouseY</h2>
 <p>this is artist purin phanichphant's piece from <a href="http://cargocollective.com/100daysofp5js/12-100-Pyramide">100 days of p5.js</a></p>
-<script type="text/p5" data-autoplay data-preview-width="300">
+<script type="text/p5" data-height="400" data-preview-width="300">
 var s;
 
 function setup() {
@@ -61,7 +76,7 @@ function draw() {
 </script>
 <h2>example 3: capture</h2>
 <p>this is from the p5.js <a href="http://p5js.org/examples/examples/Dom_Video_Capture.php">video capture example</a>.</p>
-<script type="text/p5" data-autoplay data-preview-width="300">
+<script type="text/p5" data-height="400" data-preview-width="300">
 var capture;
 
 function setup() {
