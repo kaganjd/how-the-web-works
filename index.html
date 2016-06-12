@@ -33,10 +33,10 @@
     <a href="#intro">introducing words and concepts</a>
   </li>
   <li>
-    <a href="#examples">playing with code samples</a>
+    <a href="#politics">racing through a few political software projects</a>
   </li>
   <li>
-    <a href="#politics">racing through a few political software projects</a>
+    <a href="#examples">playing with code samples</a>
   </li>
   <li>
     <a href="#resources">letting you know about resources for continuing to learn</a>
@@ -48,9 +48,20 @@
   <ul>
     <li>documentation and the p5.js <a href="http://p5js.org/reference/">reference</a></li>
     <li>functions</li>
-    <li>arguments</li>
+    <li><a href="http://stackoverflow.com/questions/1788923/parameter-vs-argument">arguments vs. parameters</a></li>
     <li>variables</li>
     <li>if/else logic</li>
+  </ul>
+</div>
+
+<div id="politics">
+  <h2>software is political, in form and in content</h2>
+  <l>
+    <li>open source</li>
+    <li>mapping: <a href="http://prisonmap.com/about">Prison Map</a> // <a href="https://amirentstabilized.com/">Am I Rent Stabilized?</a> // <a href="http://livinglotsnyc.org/#11/40.7300/-73.9900">596 Acres</a> // <a href="http://www.antievictionmap.com/about/">Anti-Eviction Mapping Project</a></li>
+    <li>facial recognition: <a href="https://cvdazzle.com">CV Dazzle</a></li>
+    <li>disability justice: <a href="http://taeyoonchoi.com/signing-coders/">Signing Coders</a></li>
+    <li>tech infrastructure projects: <a href="http://www.theatlantic.com/author/ingrid-burrington/">Ingrid Burrington</a> // <a href="https://www.criticalengineering.org/">Critical Engineering Manifesto</a></li>
   </ul>
 </div>
 
@@ -59,23 +70,73 @@
   <p>let's look at how we tell the computer to make basic shapes.</p>
   <script type="text/p5" data-height="400" data-preview-width="300">
   function setup() {
-    createCanvas(300, 300);
+  createCanvas(300, 300);
   }
   
-  function draw() {
-    background(255, 0, 255);
+function draw() {
+  background(255);
   
-    ellipse(50, 50, 50, 50);
+//coastline
+  stroke(0, 200, 255);
+  strokeWeight(5);
+  line(0, 0, 20, 20);
+  line(20, 20, 70, 50);
+  line(70, 50, 120, 120);
+  line(120, 120, 150, 100);
+  line(150, 100, 200, 120);
+  line(150, 100, 200, 120);
+  line(200, 120, 210, 150);
+  line(210, 150, 250, 200);
+  line(250, 200, 270, 180);
+  line(270, 180, 260, 150);
+  line(260, 150, 300, 190);
   
-    rect(50, 50, 100, 100);
-  
-    line(25, 25, 75, 75);
-    line(25, 25, 25, 75);
-    line(25, 75, 75, 75);
+//road to the beach 
+  stroke(0);
+  strokeWeight(2);
+  line(0, 150, 210, 150);
+//road along the coast 
+  line(0, 50, 170, 200);
+  line(170, 200, 300, 250);
+
+//eviction areas
+  fill('rgba(255, 0, 0, 0.4)');
+  ellipse(20, 100, 20, 20);
+  ellipse(50, 150, 30, 30);
   }
   </script>
   
   <h2>example 2: mouseX and mouseY</h2>
+  <p>this example lets us play with <strong>mouseX and mouseY</strong>, <strong>color</strong>, and <strong>if statements</strong>.
+  <script type="text/p5" data-height="400" data-preview-width="300">
+  var area1;
+  var area2;
+  
+  function setup() {
+    createCanvas(300, 300);
+    }
+    
+  function draw() {
+    background(255);
+  //eviction areas
+    fill('rgba(255, 0, 0, 0.4)');
+    area1 = ellipse(20, 100, 20, 20);
+    area2 = ellipse(50, 150, 30, 30);
+  
+  //tooltip for area2  
+    if (mouseX >= 20 && mouseX <= 80
+       && mouseY >=120 && mouseY <= 180) {
+      fill('rgba(0, 0, 0, 0.4)');
+      rect(150, 50, 140, 50);
+      fill(255);
+      text("This is called a 'tooltip'", 160, 75);
+    };
+    
+  //try to make the tooltip for area1  
+  }
+  </script>
+
+  <h2>example 3: mouseX and mouseY</h2>
   <p>this example lets us play with <strong>mouseX and mouseY</strong>, <strong>color</strong>, and <strong>if statements</strong>.</p> 
   <p>this example is a piece by artist <a href="http://  cargocollective.com/100daysofp5js/12-100-Pyramide">purin phanichphant</a>.</p>
   <script type="text/p5" data-height="400" data-preview-width="300">
@@ -107,7 +168,7 @@
   }
   </script>
 
-  <h2>example 3: animation</h2>
+  <h2>example 4: animation</h2>
   <p>this example lets us talk about <strong>if statements</strong> and <strong>motion</strong>.</p> 
   <p>this is from the p5.js <a href="http://p5js.org/examples/demos/Hello_P5_Animation.php">animation</a> example.</p>
   <script type="text/p5" data-height="400" data-preview-width="300">
@@ -140,18 +201,6 @@ function draw() {
   }
 }
   </script>
-</div>
-
-<div id="politics">
-  <h2>software is political, in form and content</h2>
-  <l>
-    <li>open source</li>
-    <li>mapping: <a href="https://amirentstabilized.com/">Am I Rent Stabilized?</a> // <a href="http://livinglotsnyc.org/#11/40.7300/-73.9900">596 Acres</a> // <a href="http://www.antievictionmap.com/about/">Anti-Eviction Mapping Project</a></li>
-    <li>algorithms</li>
-    <li>apps</li>
-    <li>disability justice: <a href="http://taeyoonchoi.com/signing-coders/">Signing Coders</a></li>
-    <li>tech infrastructure projects: <a href="https://www.criticalengineering.org/">Critical Engineering Manifesto</a></li>
-  </ul>
 </div>
 
 <div id="resources">
