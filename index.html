@@ -2,7 +2,7 @@
 <html>
 <meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-<title>p5.js-widget</title>
+<title>p5.js</title>
 <div id="app-holder"></div>
 <script src="main.bundle.js"></script>
 <head>
@@ -42,6 +42,9 @@
   <li>
     <a href="#politics">racing through a few political software projects</a>
   </li>
+  <li>
+    <a href="#resources">letting you know about resources for continuing to learn</a>
+  </li>
 </ul>
 
 <div id=intro>
@@ -75,14 +78,16 @@
     line(25, 75, 75, 75);
   }
   </script>
+  
   <h2>example 2: mouseX and mouseY</h2>
+  <p>this example lets us play with <strong>mouseX and mouseY</strong>, <strong>color</strong>, and <strong>if statements</strong>.</p> 
   <p>this is artist purin phanichphant's piece from <a href="http://  cargocollective.com/100daysofp5js/12-100-Pyramide">100 days of p5.js</a>.</p>
   <script type="text/p5" data-height="400" data-preview-width="300">
   var s;
   
   function setup() {
     createCanvas(windowWidth, windowHeight); 
-    s = 150;
+    s = 100;
     mouseX = width/2;
     mouseY = height/2;
     background('#C5D2D6');
@@ -105,35 +110,59 @@
     }
   }
   </script>
-  <h2>example 3: capture</h2>
-  <p>this is from the p5.js <a href="http://p5js.org/examples/examples/ Dom_Video_Capture.php">video capture example</a>.</p>
+
+  <h2>example 3: animation</h2>
+  <p>this example lets us talk about <strong>if statements</strong> and <strong>motion</strong>.</p> 
+  <p>this is from the p5.js <a href="http://p5js.org/examples/demos/Hello_P5_Animation.php">animation</a> example.</p>
   <script type="text/p5" data-height="400" data-preview-width="300">
-  var capture;
+// Where is the circle
+var x, y;
+
+function setup() {
+  createCanvas(720, 400);
+  // Starts in the middle
+  x = width / 2;
+  y = height;
+}
+
+function draw() {
+  background(200);
   
-  function setup() {
-    createCanvas(390, 240);
-    capture = createCapture(VIDEO);
-    capture.size(320, 240);
-    //capture.hide();
-  }
+  // Draw a circle
+  stroke(50);
+  fill(100);
+  ellipse(x, y, 24, 24);
   
-  function draw() {
-    background(255);
-    image(capture, 0, 0, 320, 240);
-    filter('INVERT');
+  // Jiggling randomly on the horizontal axis
+  x = x + random(-1, 1);
+  // Moving up at a constant speed
+  y = y - 1;
+  
+  // Reset to the bottom
+  if (y < 0) {
+    y = height;
   }
+}
   </script>
 </div>
 
 <div id="politics">
-<h2>software is political</h2>
-<ul>
-  <li>open source</li>
-  <li>mapping</li>
-  <li>algorithms</li>
-  <li>apps</li>
-  <li>tech infrastructure projects</li>
-</ul>
+  <h2>software is political</h2>
+  <ul>
+    <li>open source</li>
+    <li>mapping</li>
+    <li>algorithms</li>
+    <li>apps</li>
+    <li>tech infrastructure projects</li>
+  </ul>
+</div>
+
+<div id="resources">
+  <h2>free, good learning resources</h2>
+  <ul>
+    <li><a href="https://github.com/kaganjd/p5-at-amc/wiki/Start-Here">on the wiki for this website</a></li>
+    <li><a href="http://www.jkitppit.com/free-tools/">growing list of free tools for beginners</a></li>
+  </ul>
 </div>
 </body>
 </html>
