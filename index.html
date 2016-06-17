@@ -2,7 +2,7 @@
 <html>
 <meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-<title>p5.js</title>
+<title>p5.js at amc</title>
 <div id="app-holder"></div>
 <script src="main.bundle.js"></script>
 <head>
@@ -45,9 +45,10 @@
 
 <div id="politics">
   <h2>software is political, in form and in content</h2>
-  <l>
+  <ul>
     <li>open source</li>
     <li>mapping: <a href="http://prisonmap.com/about">Prison Map</a> // <a href="https://amirentstabilized.com/">Am I Rent Stabilized?</a> // <a href="http://livinglotsnyc.org/#11/40.7300/-73.9900">596 Acres</a> // <a href="http://www.antievictionmap.com/about/">Anti-Eviction Mapping Project</a></li>
+    <li>algorithms: <a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">ProPublica piece, "Machine Bias"</a></li>
     <li>facial recognition: <a href="https://cvdazzle.com">CV Dazzle</a></li>
     <li>disability justice: <a href="http://taeyoonchoi.com/signing-coders/">Signing Coders</a></li>
     <li>tech infrastructure projects: <a href="http://networks.land"/>Networks.land</a> // <a href="https://www.criticalengineering.org/">Critical Engineering Manifesto</a></li>
@@ -59,7 +60,7 @@
   <ul>
     <li>documentation and the p5.js <a href="http://p5js.org/reference/">reference</a></li>
     <li>functions</li>
-    <li><a href="http://stackoverflow.com/questions/1788923/parameter-vs-argument">arguments vs. parameters</a></li>
+    <li>syntax</li>
     <li>variables</li>
     <li>if/else logic</li>
   </ul>
@@ -67,7 +68,8 @@
 
 <div id=examples>
   <h2>example 1: shapes</h2>
-  <p>let's look at how we tell the computer to make basic shapes.</p>
+  <p>let's look at how we tell the computer to make basic shapes. we're trying to replicate some of the design
+  elements from the anti-eviction mapping project's oral history map.</p>
   <script type="text/p5" data-height="400" data-preview-width="300">
   function setup() {
   createCanvas(300, 300);
@@ -91,10 +93,11 @@ function draw() {
   line(270, 180, 260, 150);
   line(260, 150, 300, 190);
   
-//road to the beach 
+//road to the water
   stroke(0);
   strokeWeight(2);
   line(0, 150, 210, 150);
+
 //road along the coast 
   line(0, 50, 170, 200);
   line(170, 200, 300, 250);
@@ -103,11 +106,14 @@ function draw() {
   fill('rgba(255, 0, 0, 0.4)');
   ellipse(20, 100, 20, 20);
   ellipse(50, 150, 30, 30);
+
+//try to make another road
+
   }
   </script>
   
   <h2>example 2: mouseX and mouseY</h2>
-  <p>this example lets us play with <strong>mouseX and mouseY</strong>, <strong>color</strong>, and <strong>if statements</strong>.
+  <p>let's try to add an interface element called a tooltip. this example lets us learn about <strong>mouseX and mouseY</strong> and <strong>if/else logic</strong>.
   <script type="text/p5" data-height="400" data-preview-width="300">
   var area1;
   var area2;
@@ -118,6 +124,7 @@ function draw() {
     
   function draw() {
     background(255);
+
   //eviction areas
     fill('rgba(255, 0, 0, 0.4)');
     area1 = ellipse(20, 100, 20, 20);
@@ -129,16 +136,17 @@ function draw() {
       fill('rgba(0, 0, 0, 0.4)');
       rect(150, 50, 140, 50);
       fill(255);
-      text("This is called a 'tooltip'", 160, 75);
+      text("This is an eviction area", 160, 75);
     };
     
-  //try to make the tooltip for area1  
+  //try to make the tooltip for area1 
+
   }
   </script>
 
   <h2>example 3: mouseX and mouseY</h2>
-  <p>this example lets us play with <strong>mouseX and mouseY</strong>, <strong>color</strong>, and <strong>if statements</strong>.</p> 
-  <p>this example is a piece by artist <a href="http://  cargocollective.com/100daysofp5js/12-100-Pyramide">purin phanichphant</a>.</p>
+  <p>this example shows how <strong>mouseX and mouseY</strong> and <strong>if/else logic</strong> can be used in a different way.</p> 
+  <p>it's a piece by artist <a href="http://  cargocollective.com/100daysofp5js/12-100-Pyramide">purin phanichphant</a>.</p>
   <script type="text/p5" data-height="400" data-preview-width="300">
   var s;
   
@@ -169,7 +177,7 @@ function draw() {
   </script>
 
   <h2>example 4: animation</h2>
-  <p>this example lets us talk about <strong>if statements</strong> and <strong>motion</strong>.</p> 
+  <p>this example lets us use <strong>if/else statement</strong> to create an animation.</p> 
   <p>this is from the p5.js <a href="http://p5js.org/examples/demos/Hello_P5_Animation.php">animation</a> example.</p>
   <script type="text/p5" data-height="400" data-preview-width="300">
 // Where is the circle
@@ -206,7 +214,9 @@ function draw() {
 <div id="resources">
   <h2>free learning resources</h2>
   <ul>
-    <li><a href="https://github.com/kaganjd/p5-at-amc/wiki/Get-Started">here</a></li>
+    <li><a href="https://github.com/kaganjd/p5-at-amc/wiki/Get-Started">the p5-at-amc wiki</a></li>
+    <li><a href="http://eloquentjavascript.net/">eloquent javascript</a></li>
+  </ul>
 </div>
 </body>
 </html>
