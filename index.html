@@ -124,10 +124,7 @@ function draw() {
     
   function draw() {
     background(255);
-<<<<<<< HEAD
-=======
 
->>>>>>> master
   //eviction areas
     fill('rgba(255, 0, 0, 0.4)');
     area1 = ellipse(20, 100, 20, 20);
@@ -183,12 +180,11 @@ function draw() {
   <p>this example lets us use <strong>if/else statement</strong> to create an animation.</p> 
   <p>this is from the p5.js <a href="http://p5js.org/examples/demos/Hello_P5_Animation.php">animation</a> example.</p>
   <script type="text/p5" data-height="400" data-preview-width="300">
-// Where is the circle
-var x, y;
+var x;
+var y;
 
 function setup() {
   createCanvas(300, 300);
-  // Starts in the middle
   x = width / 2;
   y = height;
 }
@@ -201,12 +197,12 @@ function draw() {
   fill(100);
   ellipse(x, y, 24, 24);
   
-  // Jiggling randomly on the horizontal axis
+  // Jiggle randomly on the horizontal axis
   x = x + random(-1, 1);
-  // Moving up at a constant speed
+  // Move up at a constant speed
   y = y - 1;
   
-  // Reset to the bottom
+  // If the circle reaches the top, start it again at the bottom
   if (y < 0) {
     y = height;
   }
