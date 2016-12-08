@@ -2,9 +2,7 @@
 <html>
 <meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-<title>p5.js at amc</title>
-<div id="app-holder"></div>
-<script src="main.bundle.js"></script>
+<title>how the web works</title>
 <head>
 <style>
   html {
@@ -25,193 +23,63 @@
 </head>
 <body>
   <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-<h1>intro to coding with p5.js</h1>
+<h1>how the web works: the super quick and dirty version with tons of links for you to come back to</h1>
 
 <h2>here's what we're doing today</h2>
 <ol>
   <li>
-    <a href="#politics">racing through a few political software projects</a>
+    <a href="#1">the tiny picture: what's in a packet?</a>
   </li>
   <li>
-    <a href="#intro">introducing words and concepts</a>
+    <a href="#2">exploring the terminal</a>
   </li>
   <li>
-    <a href="#examples">playing with code samples</a>
+    <a href="#3">the big picture: international internet infrastructure</a>
   </li>
   <li>
-    <a href="#resources">letting you know about resources for continuing to learn</a>
+    <a href="#4">dodge the alt-right with alt-browsing</a>
   </li>
 </ol>
 
-<div id="politics">
-  <h2>1. political software projects</h2>
+<div id="1">
+  <h2>1. what's in a packet?</h2>
   <ul>
-    <li>open source</li>
-    <li>mapping: <a href="http://prisonmap.com/about">Prison Map</a> // <a href="https://amirentstabilized.com/">Am I Rent Stabilized?</a> // <a href="http://livinglotsnyc.org/#11/40.7300/-73.9900">596 Acres</a> // <a href="http://www.antievictionmap.com/about/">Anti-Eviction Mapping Project</a></li>
-    <li>algorithms: <a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">ProPublica piece, "Machine Bias"</a></li>
-    <li>facial recognition: <a href="https://cvdazzle.com">CV Dazzle</a></li>
-    <li>disability justice: <a href="http://taeyoonchoi.com/signing-coders/">Signing Coders</a></li>
-    <li>tech infrastructure projects: <a href="http://networks.land"/>Networks.land</a> // <a href="https://www.criticalengineering.org/">Critical Engineering Manifesto</a></li>
+    <li>tbd</li>
   </ul>
 </div>
 
-<div id=intro>
-  <h2>2. words and concepts</h2>
+<div id="2">
+  <h2>2. the terminal</h2>
   <ul>
-    <li>documentation and the p5.js <a href="http://p5js.org/reference/">reference</a></li>
-    <li>functions</li>
-    <li>syntax</li>
-    <li>variables</li>
-    <li>if/else logic</li>
+    <li>traceroute</li>
+    <li>whois</li>
   </ul>
 </div>
 
-<div id=examples>
-  <h2>3. examples</h2>
-  <p>example 1: let's look at how we tell the computer to make basic shapes. we're trying to replicate some of the design elements from the anti-eviction mapping project's oral history map.</p>
-  <script type="text/p5" data-height="400" data-preview-width="300">
-  function setup() {
-  createCanvas(300, 300);
-  }
-  
-function draw() {
-  background(255);
-  
-//coastline
-  stroke(0, 200, 255);
-  strokeWeight(5);
-  line(0, 0, 20, 20);
-  line(20, 20, 70, 50);
-  line(70, 50, 120, 120);
-  line(120, 120, 150, 100);
-  line(150, 100, 200, 120);
-  line(150, 100, 200, 120);
-  line(200, 120, 210, 150);
-  line(210, 150, 250, 200);
-  line(250, 200, 270, 180);
-  line(270, 180, 260, 150);
-  line(260, 150, 300, 190);
-  
-//road to the water
-  stroke(0);
-  strokeWeight(2);
-  line(0, 150, 210, 150);
-
-//road along the coast 
-  line(0, 50, 170, 200);
-  line(170, 200, 300, 250);
-
-//eviction areas
-  fill('rgba(255, 0, 0, 0.4)');
-  ellipse(20, 100, 20, 20);
-  ellipse(50, 150, 30, 30);
-
-//try to make another road
-
-  }
-  </script>
-  
-  <p>example 2: let's try to add an interface element called a tooltip. this example lets us learn about <strong>mouseX and mouseY</strong> and <strong>if/else logic</strong>.</p>
-  <script type="text/p5" data-height="400" data-preview-width="300">
-  var area1;
-  var area2;
-  
-  function setup() {
-    createCanvas(300, 300);
-    }
-    
-  function draw() {
-    background(255);
-
-  //eviction areas
-    fill('rgba(255, 0, 0, 0.4)');
-    area1 = ellipse(20, 100, 20, 20);
-    area2 = ellipse(50, 150, 30, 30);
-  
-  //tooltip for area2  
-    if (mouseX >= 20 && mouseX <= 80
-       && mouseY >=120 && mouseY <= 180) {
-      fill('rgba(0, 0, 0, 0.4)');
-      rect(150, 50, 140, 50);
-      fill(255);
-      text("This is an eviction area", 160, 75);
-    };
-    
-  //try to make the tooltip for area1 
-
-  }
-  </script>
-
-  <p>example 3: this example shows how <strong>mouseX and mouseY</strong> and <strong>if/else logic</strong> can be used in a different way.</p> 
-  <p>it's a piece by artist <a href="http://  cargocollective.com/100daysofp5js/12-100-Pyramide">purin phanichphant</a>.</p>
-  <script type="text/p5" data-height="400" data-preview-width="300">
-  var s;
-  
-  function setup() {
-    createCanvas(windowWidth, windowHeight); 
-    s = 100;
-    mouseX = width/2;
-    mouseY = height/2;
-    background('#C5D2D6');
-  }
-  
-  function draw() {
-    //background(255);
-    noStroke();
-    
-    if  (mouseX>(width/2)-s && mouseX<(width/2)+s &&
-    mouseY>(height/2)-s && mouseY<(height/2)+s){
-    fill('#00B7FF');
-    triangle(mouseX,mouseY,(width/2)-s,(height/2)-s,(width/2)+s,( height/2)-s);
-    fill('#02ABED');
-    triangle(mouseX,mouseY,(width/2)+s,(height/2)-s,(width/2)+s,( height/2)+s);
-    fill('#009AD6');
-    triangle(mouseX,mouseY,(width/2)+s,(height/2)+s,(width/2)-s,( height/2)+s);
-    fill('#00AAED');
-    triangle(mouseX,mouseY,(width/2)-s,(height/2)+s,(width/2)-s,( height/2)-s);
-    }
-  }
-  </script>
-
-  <p>example 4: this example lets us use <strong>assignment statements</strong> to create an animation.</p> 
-  <p>this is from the p5.js <a href="http://p5js.org/examples/demos/Hello_P5_Animation.php">animation</a> example.</p>
-  <script type="text/p5" data-height="400" data-preview-width="300">
-var x;
-var y;
-
-function setup() {
-  createCanvas(300, 300);
-  x = width / 2;
-  y = height;
-}
-
-function draw() {
-  background(200);
-  
-  // Draw a circle
-  stroke(50);
-  fill(100);
-  ellipse(x, y, 24, 24);
-  
-  // Jiggle randomly on the horizontal axis
-  x = x + random(-1, 1);
-  // Move up at a constant speed
-  y = y - 1;
-  
-  // If the circle reaches the top, start it again at the bottom
-  if (y < 0) {
-    y = height;
-  }
-}
-  </script>
+<div id="3">
+  <h2>3. 30,000-foot infrastructure view</h2>
+  <ul>
+    <li>submarine cable map</li>
+    <li>ingrid burrington</li>
+    <li>shameless plug for my own experiment (that you could theoretically try too!) <a href="https://medium.com/@kenjagan/packet-sniffing-in-the-subway">packet sniffing in the subway</a></li>
+  </ul>
 </div>
 
-<div id="resources">
-  <h2>4. free learning resources</h2>
+<div id="4">
+  <h2>4. alt-browsing</h2>
   <ul>
-    <li><a href="https://github.com/kaganjd/p5-at-amc/wiki/Get-Started">the p5-at-amc wiki</a></li>
-    <li><a href="http://eloquentjavascript.net/">eloquent javascript</a></li>
+    <li><a href="https://www.eff.org/pages/tor-and-https">tor and https overview</a></li>
+    <li><a href="https://www.eff.org/https-everywhere%20">https everywhere</a></li>
+    <li><a href="https://www.getcloak.com/">cloak VPN</a></li>
   </ul>
+
+<div id="5">
+  <h2>5. think bad, do good -samy kamkar</h2>
+  <ul>
+    <li>wireshark</li>
+    <li>debookee</li>
+  </ul>
+</div>  
 </div>
 </body>
 </html>
