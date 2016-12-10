@@ -19,6 +19,22 @@
     font-weight: normal;
   }
 
+  code {
+    font-size: 16px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #ed225d;
+  }
+
+  img {
+    width: 250px;
+  }
+
+  #thanks {
+    padding-top: 50px;
+    padding-bottom: 20px;
+  }
+
 </style> 
 </head>
 <body>
@@ -28,58 +44,79 @@
 <h2>here's what we're doing today</h2>
 <ol>
   <li>
-    <a href="#1">the tiny picture: what's in a packet?</a>
+    <a href="#1">the big picture: internet infrastructure</a>
   </li>
   <li>
-    <a href="#2">exploring the terminal</a>
+    <a href="#2">the tiny picture: what's in a packet?</a>
   </li>
   <li>
-    <a href="#3">the big picture: international internet infrastructure</a>
+    <a href="#3">two useful terminal commands</a>
   </li>
   <li>
     <a href="#4">dodge the alt-right with alt-browsing</a>
   </li>
+  <li>
+    <a href="#5">think bad, do good</a>
+  </li>
 </ol>
 
 <div id="1">
-  <h2>1. what's in a packet?</h2>
+  <h2>1. the big picture: internet infrastructure</h2>
   <ul>
-    <li>tbd</li>
+    <li><a href="http://www.submarinecablemap.com/">submarine cable map</a> "depicts active and planned submarine cable systems and their landing stations"</li>
+    <li>ingrid burrington's 2015-16 <a href="https://www.theatlantic.com/author/ingrid-burrington/">writing</a> for the atlantic</li>
+    <li>tactical tech's <a href="https://myshadow.org/ckeditor_assets/attachments/146/howtheinternetworks_cardset.pdf">internet infrastructure cards</a></li>
+    <li>neal stephenson's 1996 article, <a href="https://www.wired.com/1996/12/ffglass/">"mother earth, mother board"</a></li>
+    <li>peter garritano's <a href="http://www.petergarritano.com/the-internet.html">stunning photos</a> of where the internet lives</li>
+    <li>my own experiment (that you could theoretically try too!): <a href="https://medium.com/@kenjagan/packet-sniffing-in-the-subway-b84eb31d6178#.628g6bc3h">packet sniffing in the subway</a></li>
   </ul>
 </div>
 
 <div id="2">
-  <h2>2. the terminal</h2>
+  <h2>2. the tiny picture: what's in a data packet?</h2>
   <ul>
-    <li>traceroute</li>
-    <li>whois</li>
-  </ul>
+    <li>your device's IP address</li>
+    <li>the website host's IP address</li>
+    <li>website content</li>
+    <li>a bunch of other stuff</li>
+    <img src="packet.jpg">
+    <li>data packets make up the requests that your browser makes to a server</li>
+    <li>you can look at your browser's network requests by going here (this is for firefox, but all browsers have some version of "developer tools" that let you look at these):</li>
+    <img src="devtools.jpg">
+  </ul>  
 </div>
 
 <div id="3">
-  <h2>3. 30,000-foot infrastructure view</h2>
+  <h2>3. two useful terminal commands</h2>
   <ul>
-    <li>submarine cable map</li>
-    <li>ingrid burrington</li>
-    <li>shameless plug for my own experiment (that you could theoretically try too!) <a href="https://medium.com/@kenjagan/packet-sniffing-in-the-subway">packet sniffing in the subway</a></li>
+    <li><code>traceroute</code> tells you the IP addresses your packet hops to on the way to the server.</li>
+    <li><code>whois</code> tells you information about the website host. you can do <code>whois [IP address]</code> or <code>whois [host name]</code> since host IP and host name are just different versions of the same information.</li>
+    <img src="hops.jpg">
+    <br>
+    pro-tip: you can always type <code>man traceroute</code> or <code>man whois</code> to learn more about the command.
   </ul>
 </div>
 
 <div id="4">
-  <h2>4. alt-browsing</h2>
+  <h2>4. dodge the alt-right with alt-browsing</h2>
   <ul>
-    <li><a href="https://www.eff.org/pages/tor-and-https">tor and https overview</a></li>
-    <li><a href="https://www.eff.org/https-everywhere%20">https everywhere</a></li>
-    <li><a href="https://www.getcloak.com/">cloak VPN</a></li>
+    <li>an overview of <a href="https://www.eff.org/pages/tor-and-https">tor and https</a></li>
+    <li>free browser extension, <a href="https://www.eff.org/https-everywhere%20">https everywhere</a></li>
+    <li>not-free but well-regarded VPN, <a href="https://www.getcloak.com/">cloak VPN</a></li>
   </ul>
 
 <div id="5">
   <h2>5. think bad, do good -samy kamkar</h2>
   <ul>
-    <li>wireshark</li>
-    <li>debookee</li>
+    <li>free network analyzer tools, <a href="https://www.wireshark.org/download.html">wireshark</a> and <a href="https://debookee.com/">debookee</a></li>
+    <li><a href="https://samy.pl/">samy kamkar</a>, your friendly neighborhood do-gooder hacker</li>
   </ul>
-</div>  
+</div>
+
+<div id="thanks">
+<h2><i>thanks</h2>
+everyone who builds free, open source tools for us to learn and play with,<br>tom igoe for teaching me 90% of what i know about networks, &<br>surya mattu for teaching me the other half<br></i>
+</div>
 </div>
 </body>
 </html>
